@@ -1,0 +1,526 @@
+/* ==================================================
+   PÁGINA NOSOTROS
+================================================== */
+
+.about-page {
+ /* background: #f5f5f5;*/
+  background: #f3f3f3;
+}
+
+/* ==================================================
+   HERO INTERNO
+================================================== */
+
+/* .about-hero {
+  background: var(--azul);
+  padding: 70px 20px;
+  text-align: center;
+} */
+
+.about-hero {
+  background: var(--azul);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about-hero h1 {
+  color: white;
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.about-hero p {
+  color: var(--verde);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* ==================================================
+   HISTORIA
+================================================== */
+
+.about-history {
+  background: #f5f5f5;
+  padding: 70px 20px;
+}
+
+.about-history-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-history-image img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+.about-history-content h2 {
+  color: var(--azul);
+  font-size: 64px;
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.about-history-content p {
+  font-family: "Poppins", sans-serif;
+  color: #35503b;
+  font-size: 24px;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 650px;
+}
+
+/* ==================================================
+   ESTADÍSTICAS
+================================================== */
+
+.about-stats {
+  display: flex;
+  gap: 50px;
+  margin-top: 60px;
+}
+
+.about-stat {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.about-stat i {
+  color: var(--verde);
+  font-size: 46px;
+}
+
+.about-stat strong {
+  display: block;
+  color: var(--azul);
+  font-size: 52px;
+  line-height: 1;
+}
+
+.about-stat span {
+  display: block;
+  color: #35503b;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* ==================================================
+   MISIÓN Y VISIÓN
+================================================== */
+
+.mission-vision {
+  /*background: var(--azul);*/
+  background: #09155F;
+  padding: 60px 20px;
+}
+
+.mission-vision-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.mv-card {
+  background: #dfe9ef;
+  border-radius: 10px;
+  padding: 35px;
+  text-align: center;
+}
+
+.mv-icon {
+  margin-bottom: 15px;
+}
+
+.mv-icon i {
+  color: var(--azul);
+  font-size: 32px;
+}
+
+.mv-card h3 {
+  color: var(--azul);
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.mv-card p {
+  font-family: "Poppins", sans-serif;
+  color: #35503b;
+  line-height: 1.7;
+}
+
+/* ==================================================
+   VALORES
+================================================== */
+
+.values-section {
+  background: #f5f5f5;
+  padding: 80px 20px;
+}
+
+.values-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+  flex-wrap: wrap; */
+}
+
+/* .value-card {
+  width: 280px;
+  min-height: 280px;
+  background: #dfe9ef;
+  border-radius: 12px;
+  padding: 35px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+} */
+ 
+/***/
+
+/* ==========================================
+   TARJETAS FLIP
+========================================== */
+
+.value-card {
+  /* width: 280px;
+  height: 280px; */
+  width: 340px;
+  height: 340px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.value-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform .8s ease;
+  transform-style: preserve-3d;
+}
+
+.value-card.flipped .value-card-inner {
+  transform: rotateY(180deg);
+}
+
+.value-card-front,
+.value-card-back {
+  position: absolute;
+  inset: 0;
+
+  border-radius: 12px;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  overflow: hidden;
+
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+}
+
+/* FRENTE */
+
+.value-card-front {
+  background: #dfe9ef;
+
+  padding: 35px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.value-card-front i {
+  font-size: 55px;
+  color: var(--verde);
+  margin-bottom: 20px;
+}
+
+.value-card-front h3 {
+  color: var(--azul);
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.value-card-front p {
+  font-family: "Poppins", sans-serif;
+  color: #35503b;
+  line-height: 1.7;
+}
+
+/* ATRÁS */
+
+.value-card-back {
+  transform: rotateY(180deg);
+}
+
+.value-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/***/
+
+.value-card i {
+  font-size: 55px;
+  color: var(--verde);
+  margin-bottom: 20px;
+}
+
+.value-card h3 {
+  color: var(--azul);
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.value-card p {
+  font-family: "Poppins", sans-serif;
+  color: #35503b;
+  line-height: 1.7;
+}
+
+/* ==================================================
+   CLIENTES
+================================================== */
+
+.clients-section {
+  background: #f5f5f5;
+  padding: 20px 20px 100px;
+  text-align: center;
+}
+
+.clients-section h2 {
+  color: #5d9f42;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.clients-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.clients-logos img {
+  max-height: 55px;
+  width: auto;
+  transition: .3s;
+}
+
+.clients-logos img:hover {
+  transform: scale(1.05);
+}
+
+/* ==================================================
+   RESPONSIVE TABLET
+================================================== */
+
+@media (max-width: 992px) {
+
+  .about-history-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-history-content p {
+    max-width: 100%;
+  }
+
+  .about-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .mission-vision-container {
+    grid-template-columns: 1fr;
+  }
+
+  .values-container {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+}
+
+/* ==================================================
+   RESPONSIVE MOBILE
+================================================== */
+
+@media (max-width: 768px) {
+
+  .about-hero h1 {
+    font-size: 42px;
+  }
+
+  .about-hero p {
+    font-size: 18px;
+  }
+
+  .about-history-content h2 {
+    font-size: 42px;
+  }
+
+  .about-history-content p {
+    font-size: 18px;
+  }
+
+  .about-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .about-stat {
+    justify-content: center;
+  }
+
+  .about-stat strong {
+    font-size: 40px;
+  }
+
+  .value-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .clients-logos {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .about-hero {
+    padding: 50px 20px;
+  }
+
+  .about-history {
+    padding: 50px 20px;
+  }
+
+  .mission-vision {
+    padding: 50px 20px;
+  }
+
+  .values-section {
+    padding: 50px 20px;
+  }
+
+  .about-history-content h2 {
+    font-size: 36px;
+  }
+
+  .about-history-content p {
+    font-size: 16px;
+  }
+
+  .mv-card {
+    padding: 25px;
+  }
+
+  .mv-card h3 {
+    font-size: 24px;
+  }
+
+}
+
+/* ==========================================
+   ANIMACIONES
+========================================== */
+
+.about-history-image,
+.about-history-content,
+.mv-card,
+.value-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all .8s ease;
+}
+
+.show-element {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/***/
+
+/*
+.value-card {
+  transition: transform .3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+}
+
+.value-card:hover .value-card-inner {
+  transform: rotateY(12deg);
+}
+  */
+
+
+  .value-card:hover {
+  transform: translateY(-8px);
+}
+
+/* ==========================================
+   CONTADOR ESTADÍSTICAS
+========================================== */
+.plus {
+  color: var(--azul);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+}
+.stat-number {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.stat-number strong {
+  display: block;
+  color: var(--azul);
+  font-size: 52px;
+  line-height: 1;
+}
+
+.plus {
+  color: var(--azul);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 6px;
+}
+.plus {
+  color: var(--azul);
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+  top: 6px;
+}

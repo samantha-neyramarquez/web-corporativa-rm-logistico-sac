@@ -1,0 +1,245 @@
+/* ==========================================
+   COTIZA
+========================================== */
+
+.quote-page{
+  background:#f4f4f4;
+}
+
+/* HERO */
+
+.quote-hero{
+ background: var(--azul);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.quote-hero h1{
+
+  color:white;
+
+  font-size:72px;
+
+  font-weight:700;
+
+  margin-bottom:10px;
+
+  text-transform:uppercase;
+}
+
+.quote-hero p{
+
+  color:var(--verde);
+
+  font-size:22px;
+}
+
+/* INTRO */
+
+.quote-intro{
+
+  padding:100px 20px 50px;
+}
+
+.intro-container{
+
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:25px;
+
+  max-width:900px;
+  margin:auto;
+}
+
+.intro-icon{
+
+  font-size:70px;
+
+  color:var(--verde);
+}
+
+.intro-content h2{
+
+  color:var(--azul);
+
+  font-size:58px;
+
+  line-height:1.1;
+
+  margin-bottom:20px;
+}
+
+.intro-text{
+
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.intro-content span{
+
+  display:block;
+
+  margin-top:8px;
+
+  font-style:italic;
+
+  color:#555;
+}
+
+/* FORM */
+
+.quote-form-section{
+
+  padding:30px 20px 90px;
+}
+
+.quote-form{
+
+  max-width:900px;
+
+  margin:auto;
+
+  background:#dce9f2;
+
+  padding:70px;
+
+  border-radius:10px;
+
+  box-shadow:
+  0 4px 10px rgba(0,0,0,.2);
+}
+
+.quote-form h3{
+
+  color:var(--verde);
+
+  margin-bottom:40px;
+
+  font-size:18px;
+
+  text-transform:uppercase;
+
+  border-bottom:2px solid var(--verde);
+
+  display:inline-block;
+
+  padding-bottom:5px;
+}
+
+.form-group{
+
+  margin-bottom:28px;
+}
+
+.form-group label{
+
+  display:block;
+
+  color:var(--azul);
+
+  font-size:14px;
+
+  font-weight:700;
+
+  margin-bottom:12px;
+}
+
+.form-group input,
+.form-group select{
+
+  width:100%;
+
+  height:55px;
+
+  border:none;
+
+  border-radius:30px;
+
+  padding:0 20px;
+
+  background:#f4f4f4;
+
+  box-shadow:
+  inset 0 3px 8px rgba(0,0,0,.18);
+
+  font-size:16px;
+
+  outline:none;
+}
+
+.quote-form button{
+
+  display:block;
+
+  margin:40px auto 0;
+
+  width:170px;
+
+  height:55px;
+
+  border:none;
+
+  border-radius:8px;
+
+  background:var(--verde);
+
+  color:white;
+
+  font-size:28px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.quote-form button:hover{
+
+  background:#4a8531;
+}
+
+
+@media(max-width:992px){
+
+  .intro-content h2{
+
+    font-size:42px;
+  }
+
+  .quote-form{
+
+    padding:40px;
+  }
+}
+
+@media(max-width:768px){
+
+  .intro-container{
+
+    flex-direction:column;
+
+    text-align:center;
+  }
+
+  .intro-content h2{
+
+    font-size:34px;
+  }
+
+  .quote-hero h1{
+
+    font-size:52px;
+  }
+
+  .quote-form{
+
+    padding:30px 20px;
+  }
+
+  .quote-form button{
+
+    width:100%;
+  }
+}
