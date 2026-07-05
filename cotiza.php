@@ -132,7 +132,7 @@ href="https://www.rmaduanas.com/cotiza.html">
 
           <!-- BOTONES -->
           <div class="nav-buttons">
-            <a href="contacto.html" class="btn-cotizar">
+            <a href="cotiza.php" class="btn-cotizar">
               Cotiza Ahora
               <i class="fas fa-file-lines"></i>
             </a>
