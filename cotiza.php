@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (empty($_SESSION['csrf_token'])) {
+
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+
+}
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -65,6 +74,13 @@ href="https://www.rmaduanas.com/cotiza.html">
     <!-- ************************  -->
     <!-- ************************  -->
     
+    <script
+    src="https://www.google.com/recaptcha/api.js"
+    async
+    defer>
+
+    </script>
+
   </head>
   <body>
        <!-- HEADER -->
@@ -202,103 +218,154 @@ href="https://www.rmaduanas.com/cotiza.html">
     <div class="wrapper">
 
       <form
-        class="quote-form"
-        id="quoteForm"
-      >
+    class="quote-form"
+    id="quoteForm"
+    action="backend/send.php"
+    method="POST"
+  >
+   <!-- CAMPO OCULTO Token CSRF -->
+  <input
+    type="hidden"
+    name="csrf_token"
+    value="<?php echo $_SESSION['csrf_token']; ?>"
+>
 
-        <h3>
-          DATOS DE CONTACTO
-        </h3>
+  <h3>DATOS DE CONTACTO</h3>
 
-        <div class="form-group">
+  <div class="form-group">
 
-          <label>
-            NOMBRES Y APELLIDOS *
-          </label>
+    <label for="fullname">
+      NOMBRES Y APELLIDOS *
+    </label>
 
-          <input
-            type="text"
-            placeholder="Ingresa tu nombre completo"
-            required
-          >
+    <input
+      type="text"
+      id="fullname"
+      name="fullname"
+      placeholder="Ingresa tu nombre completo"
+      required
+      minlength="5"
+      maxlength="100"
+      pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]+$"
+      title="Ingrese únicamente letras y espacios (mínimo 5 caracteres)."
+    />
 
-        </div>
+  </div>
 
-        <div class="form-group">
+  <div class="form-group">
 
-          <label>
-            TELÉFONO DE CONTACTO *
-          </label>
+    <label for="phone">
+      TELÉFONO DE CONTACTO *
+    </label>
 
-          <input
-            type="tel"
-            placeholder="+51 9XX XXX XXX"
-            required
-          >
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      placeholder="987654321"
+      required
+      pattern="^[0-9]{9}$"
+      maxlength="9"
+      inputmode="numeric"
+      title="Ingrese un número telefónico de 9 dígitos."
+    />
 
-        </div>
+  </div>
 
-        <div class="form-group">
+  <div class="form-group">
 
-          <label>
-            CORREO DE CONTACTO *
-          </label>
+    <label for="email">
+      CORREO DE CONTACTO *
+    </label>
 
-          <input
-            type="email"
-            placeholder="xxx@gmail.com"
-            required
-          >
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="xxx@gmail.com"
+      required
+    >
 
-        </div>
+  </div>
 
-        <div class="form-group">
+  <div class="form-group">
 
-          <label>
-            SERVICIO DE INTERÉS *
-          </label>
+    <label for="service">
+      SERVICIO DE INTERÉS *
+    </label>
 
-          <select required>
+    <select
+      id="service"
+      name="service"
+      required
+    >
 
-            <option value="">
-              Selecciona un servicio
-            </option>
+      <option value="" selected disabled>
+        Selecciona un servicio
+      </option>
 
-            <option>
-              Negocios Internacionales
-            </option>
+      <option value="Negocios Internacionales">
+        Negocios Internacionales
+      </option>
 
-            <option>
-              Importación
-            </option>
+      <option value="Importación">
+        Importación
+      </option>
 
-            <option>
-              Exportación
-            </option>
+      <option value="Exportación">
+        Exportación
+      </option>
 
-            <option>
-              Agenciamiento de Aduanas
-            </option>
+      <option value="Agenciamiento de Aduanas">
+        Agenciamiento de Aduanas
+      </option>
 
-            <option>
-              Transporte Logístico
-            </option>
+      <option value="Transporte Logístico">
+        Transporte Logístico
+      </option>
 
-            <option>
-              Asesoría Aduanera
-            </option>
+      <option value="Asesoría Aduanera">
+        Asesoría Aduanera
+      </option>
 
-          </select>
+    </select>
 
-        </div>
+  </div>
 
-        <button type="submit">
+  <!-- Honeypot -->
+<!-- <div> -->
+<div style="display:none;">
+    <label for="website">
 
-          Enviar
+        Sitio web
 
-        </button>
+    </label>
 
-      </form>
+    <input
+        type="text"
+        id="website"
+        name="website"
+        autocomplete="off"
+    >
+
+</div>
+
+ <!-- reCAPTCHA v2  -->
+
+  <div
+
+  class="g-recaptcha"
+
+  data-sitekey="6LcSUDstAAAAAIuOAe4inImZKBP5p1HBfXqMtYko">
+
+  </div>
+
+
+  <button type="submit">
+    Enviar
+  </button>
+
+</form>
 
     </div>
 
